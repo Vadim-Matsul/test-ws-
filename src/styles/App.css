@@ -5,7 +5,7 @@
 }
 .App {
           text-align: center;
-          background: rgb(70, 54, 54);
+    background-color: rgb(0, 0, 0);
 }
 .CounterBlock {
              display: flex;
@@ -39,6 +39,10 @@
 }
 .interaction {
              display: flex;
+      padding-bottom: 10px;
+        padding-left: 20px;
+       border-radius: 20px;
+          background: rgba(59, 48, 48, 0.733);
 }
 .MyInp-form {
           text-align: center;
@@ -48,8 +52,12 @@
 .MyInp-form h3 {
          font-weight: normal;          
              padding: 5px;
-          max-height: 90px;
-              border: 1px solid black;
+          max-height: 90px;           
+}
+.MyInp-form-active {
+      border-radius: 10px;
+             border: 1px solid black;
+             transition: all 1s linear;
 }
 .MyInp-form-content {
             overflow: hidden;
@@ -60,4 +68,31 @@
           min-height: 100px;
                width: 100%;
       letter-spacing: 3px;
+}
+.Post {
+              margin: 10px;
+             padding: 15px 30px;
+       border-radius: 25px;
+         font-weight: 600;
+       margin-bottom: 30px;
+          box-shadow: 0px 0px 20px 5px rgba(42, 236, 236, 0.726);
+          background: rgb(0, 0, 0);
+               color: whitesmoke;
+}
+.Post:hover {
+          box-shadow: 0px 0px 20px 5px rgba(57, 187, 57, 0.719);
+}
+.Post-content h3 {
+          text-align: left;
+}
+.Post-content-title {
+      text-transform: uppercase;
+}
+.Post-content span {
+             display: block;
+              margin: 10px;
+             padding: 10px;
+       border-radius: 30px;
+               color: black;
+          background: whitesmoke;
 }

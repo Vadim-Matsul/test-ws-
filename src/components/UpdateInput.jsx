@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MyInput from './UI/input/MyInput'
+
 
 const UpdateInput = () => {
 
 const [info, setInfo] = useState ('')
-  
+
+    useEffect (() => {
+        const updateInput = document.querySelector('#updateInput')
+
+        if (info){
+            updateInput.classList.add('MyInp-form-active')
+        } else {
+            updateInput.classList.remove('MyInp-form-active')
+        }
+    }, [info])
     return (
         <div className={"MyInp-form"}>
             <div className={"MyInp-form-content"}>
-                <h3>{ info }</h3>
+                <h3 id='updateInput'>{ info }</h3>
             </div>
             <MyInput 
-                    placeholder='Введите текст'
+                    placeholder='Hello, React!'
                     value={ info }
-                    onChange={ el => setInfo(el.target.value) }/>
+                    onChange={ el => setInfo(el.target.value) } />
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PostService } from './API/PostService';
 import Counter from './components/Counter';
 import UpdateInput from './components/UpdateInput';
+import PostsList from './components/PostsList';
 import './styles/App.css';
 
 
@@ -31,7 +32,9 @@ function App() {
         <Counter />
         <UpdateInput />
       </div>
-
+      <PostsList 
+                posts = {posts}
+                defaultValue = 'Список Постов н-1' />
 
     </div >
   );
