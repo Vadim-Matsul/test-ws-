@@ -1,13 +1,19 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import Counter from './components/Counter';
+import './styles/App.css';
 
 
 
 
 function App() {
+
+
+
+
   return (
     <div className={"App"}>
-      <h1>Hello React!</h1>
+      <Counter />
+      
     </div>
   );
 }
