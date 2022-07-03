@@ -1,3 +1,21 @@
 .MyInp {
-    
+                width: auto;
+               cursor: text;
+       text-transform: uppercase;
+              outline: none;
+        border-radius: 5px;
+              padding: 5px 25px;
+          font-weight: 600;
+               margin: 0px 10px;
+           background: #f4cd8ab9;
+               border: 2px solid black;
+}
+.MyInp::placeholder {
+       text-transform: none;
+                color: rgba(0, 0, 0, 0.425);
+}
+.MyInp:focus {
+               resize: none;
+               border: 1px solid whitesmoke;
+
 }

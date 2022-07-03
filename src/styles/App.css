@@ -1,7 +1,7 @@
 * {
+          box-sizing: border-box;
               margin: 0;
              padding: 0;
-          box-sizing: border-box;
 }
 .App {
           text-align: center;
@@ -16,7 +16,7 @@
           max-height: 200px;
           min-height: 100px;
              padding: 20px;
-             border: 2px solid blanchedalmond;
+              border: 2px solid blanchedalmond;
        border-radius: 20px;
           background: black;
                color: white;
@@ -27,13 +27,37 @@
        margin-bottom: -30px;
 }
 .ZeroBlock {
-               color: red;
           box-shadow: none;
+               color: red;
+               
 }
 .ZeroBlock:hover {
-           font-size: 14px;
+              cursor: not-allowed;
       letter-spacing: normal;
-          box-shadow: 0 0 8px 4px rgb(0, 0, 0);
-              cursor: auto;
+           font-size: 14px;
+          box-shadow: 0 0 8px 4px rgb(0, 0, 0);           
 }
-    
+.interaction {
+             display: flex;
+}
+.MyInp-form {
+          text-align: center;
+               width: 80%;
+             padding: 0 50px;
+}
+.MyInp-form h3 {
+         font-weight: normal;          
+             padding: 5px;
+          max-height: 90px;
+              border: 1px solid black;
+}
+.MyInp-form-content {
+            overflow: hidden;
+               color: aqua;
+      text-transform: uppercase;
+          text-align: center;
+         padding-top: 35px;
+          min-height: 100px;
+               width: 100%;
+      letter-spacing: 3px;
+}
