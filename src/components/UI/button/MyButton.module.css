@@ -17,9 +17,6 @@
   letter-spacing: 2px;
       box-shadow: 0 0 8px 4px rgba(57, 187, 57, 0.719);
 }
-.MyBtn:nth-child(2) {
-    margin-right: 0;
-}
 .MyBtn:nth-child(2):hover {
     margin-right: 0;
       box-shadow: 0 0 8px 4px rgba(209, 14, 14, 0.719);
