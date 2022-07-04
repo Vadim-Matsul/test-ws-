@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import MyButton from "./UI/button/MyButton";
+import { Context } from "../context";
+
+
 
 
 const PostItem = ({post}) => {
 
  const navigate = useNavigate ()
+ const {removePost} = useContext ( Context )
+
 
  const RoutePage = (id) => {
     navigate (`/posts/${id}`)
-    console.log('works');
  }
     return (
         <div className={"Post"} >
@@ -23,8 +27,8 @@ const PostItem = ({post}) => {
                 <span>{post.body}</span>
             </div>
             <div className={'Post-btns'}>
-            <MyButton onClick = {() => RoutePage(post.id) }> Open   </MyButton>
-            <MyButton > Delete </MyButton>
+            <MyButton onClick = { () => RoutePage (post.id) } > Open   </MyButton>
+            <MyButton onClick = { () => removePost(post.id) } > Delete </MyButton>
             </div>
         </div>
     )

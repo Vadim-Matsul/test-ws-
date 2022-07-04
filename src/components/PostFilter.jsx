@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import MyButton from "./UI/button/MyButton";
 import MyInput from "./UI/input/MyInput";
+import Popup from "./UI/popup/Popup";
 import MySelect from "./UI/select/MySelect";
 
 
 const PostFilter = ({filter, setFilter}) => {
 
-//  const onChange = (sort) => {
-//    setFilter ({...filter, sort: sort})
-//  }
+ const [visible, setVisible] = useState (false)
 
+ 
     return (
         <div className={'Filter-form'}>
             <MySelect 
@@ -24,6 +25,10 @@ const PostFilter = ({filter, setFilter}) => {
                      onChange = { (el) => setFilter({...filter, query: el.target.value.toLowerCase()}) }
                      value = { filter.query }
                     />
+            <button onClick = { () => setVisible(true) }> Создать пост </button>
+            <Popup 
+                 visible = { visible }
+                 setVisible = { setVisible }/>
         </div>
     )
 }

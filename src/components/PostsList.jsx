@@ -8,8 +8,9 @@ const PostsList = ({posts, defaultValue}) => {
             <h2 style={{margin: '70px 0 40px 0', color: 'white'}}>{ defaultValue }</h2>
             {posts.length
             ? posts.map( post => 
-                <PostItem post={ post }
-                           key={ post.id } /> 
+                <PostItem 
+                        post={ post }
+                        key={ post.id }  /> 
               )
             : <h2 style={{margin: '70px 0 40px 30px', 
                           color: 'white',
