@@ -27,6 +27,17 @@
           background: black;
                color: white;
 }
+.CounterBlock span {
+           position: absolute;
+            display: block;
+                top: 50%;
+               left: 50%;
+          transform: translateX(-50%)
+                     translateY(-50%);
+          font-size: 90vh;
+              color: rgba(29, 54, 54, 0.329);
+              z-index: 1;
+}
 .CounterBlock-Btns {
              display: flex;
       flex-direction: row;
@@ -192,63 +203,72 @@
 .Block-ComById {
             position: relative;
                width: 80%;
-                top: 150px;
-               left: 50%;
-          transform: translateX(-50%);
-            padding: 30px;
-      border-radius: 25px;
-         background: rgba(255, 255, 255, 0.753);
+                 top: 150px;
+                left: 50%;
+           transform: translateX(-50%);
+             padding: 30px;
+       border-radius: 25px;
+          background: rgba(255, 255, 255, 0.753);
 }
 .Block-ComById h3 {
-         text-align: center;
-     text-transform: uppercase;
-       word-spacing: 4px;
-      border-radius: 20px;
-            padding: 15px;
-      margin-bottom: 40px;
-          font-size: 20px;
-         box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.719);
-         background: rgb(75, 43, 43);
-}
-.ComById {
-     margin-bottom: 35px;
-           padding: 10px;
-     border-radius: 10px;
-        box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.719);
-             color: whitesmoke;
-        background: black;
-        border-top-left-radius: 20px;
-    border-bottom-right-radius: 30px;
+          text-align: center;
+      text-transform: uppercase;
+        word-spacing: 4px;
+       border-radius: 20px;
+             padding: 15px;
+       margin-bottom: 40px;
+           font-size: 20px;
+          box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.719);
+          background: rgb(75, 43, 43);
+}                  
+.ComById {         
+       margin-bottom: 35px;
+             padding: 10px;
+       border-radius: 10px;
+          box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.719);
+               color: whitesmoke;
+          background: black;
+          border-top-left-radius: 20px;
+      border-bottom-right-radius: 30px;
 }
 .ComById::before {
-          content: '';
-          display: block;
-         position: relative;
-              top: -30px;
-             left: -30px;
-    border-radius: 50%;
-            width: 40px;
-           height: 40px;
-           border: 1px solid rgba(0, 0, 0, 0.582);
-       background: rgb(202, 164, 164);
+             content: '';
+             display: block;
+            position: relative;
+                 top: -30px;
+                left: -30px;
+       border-radius: 50%;
+               width: 40px;
+              height: 40px;
+              border: 1px solid rgba(0, 0, 0, 0.582);
+          background: rgb(202, 164, 164);
 }
 .ComById h2 {
-       margin-top: -25px;
-    margin-bottom: 5px;
-}
+          margin-top: -25px;
+       margin-bottom: 5px;
+}                 
 .ComById div span {    
-         display: block;
-         padding: 8px;
-          margin: 8px 5px;
-   border-radius: 20px;
-           color: black;
-      background: rgba(241, 226, 226, 0.973);
+             display: block;
+             padding: 8px;
+              margin: 8px 5px;
+       border-radius: 20px;
+               color: black;
+          background: rgba(241, 226, 226, 0.973);
 }
 .ComById div span:nth-child(1){
-     text-transform: uppercase;
-         text-align: center;
+      text-transform: uppercase;
+          text-align: center;
          font-weight: 600;
 }
 .ComById div span::first-letter {
-     text-transform: uppercase;
+      text-transform: uppercase;
+}
+.CrtPost-btn {
+       text-transform: uppercase;
+          font-weight: 600;
+       letter-spacing: 1px;
+              padding: 15px;
+        border-radius: 20px;
+               border: 1px solid rgba(21, 231, 13, 0.432);
+           background: #f4cd8ab9;
 }

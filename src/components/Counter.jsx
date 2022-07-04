@@ -21,6 +21,7 @@ useEffect ( () => {
 
     return (
          <div className={ 'CounterBlock' }>
+            <span>{ count }</span>
             <h2 style={{ fontSize: '28px', marginTop: '-30px' }} id='countBlock'>{ count }</h2>
             <div className={ 'CounterBlock-Btns' }>
                 <MyButton onClick={ () => setCount( count + 1 )} >  Like   </MyButton>

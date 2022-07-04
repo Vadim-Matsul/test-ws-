@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react"
-import MyButton from "../button/MyButton"
-import MyInput from "../input/MyInput"
-import classes from '../popup/Popup.module.css'
+import React, { useContext, useState } from "react";
 import { Context } from "../../../context"
+import MyButton from "../button/MyButton"
+import  MyInput from "../input/MyInput"
+import  classes from '../popup/Popup.module.css'
+
 
 
 
@@ -13,35 +14,40 @@ const Popup = ({visible, setVisible}) => {
     { title:'', body: ''}
  )
  const classArr = [classes.Popup]
+
  if (visible){
     classArr.push( classes.Active ) 
  }
  
  const createNewPost = () => {
-
     const newPost = {
         ...newPostInfo,
         id: Date.now()
     }
+
     createPost (newPost)
-    console.log(newPost);
+    setNewPostInfo( { title:'', body: ''} )
+    setVisible ( false )
  }
+ 
  
     return (
         <div className={classArr.join(' ')}
-             onClick = {() => setVisible( false )}>
-            <div className={classes.PopupContent}
-                  onClick={(event) => event.stopPropagation()}>
+             onClick = { () => setVisible( false ) }>
+            <div 
+                className={ classes.PopupContent }
+                onClick = { event => event.stopPropagation() }>
                 <MyInput 
                       value = {newPostInfo.title} 
-                      onChange = {el => setNewPostInfo({...newPostInfo, title: el.target.value})}
-                      placeholder = 'Заголовок поста'/>
+                      onChange = { el => setNewPostInfo( {...newPostInfo, title: el.target.value} ) }
+                      placeholder = 'Заголовок поста'
+                    />
                 <MyInput 
                       value = {newPostInfo.body} 
-                      onChange = {el => setNewPostInfo({...newPostInfo, body: el.target.value})}
-                      placeholder = 'Содержимое поста'/>
-                <MyButton onClick = {createNewPost}> Create </MyButton>
-
+                      onChange = { el => setNewPostInfo( {...newPostInfo, body: el.target.value} ) }
+                      placeholder = 'Содержимое поста'
+                    />
+                <MyButton onClick = { createNewPost }> Create </MyButton>
             </div>
         </div>
     )

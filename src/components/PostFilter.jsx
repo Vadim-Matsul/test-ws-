@@ -19,16 +19,20 @@ const PostFilter = ({filter, setFilter}) => {
                     options = {[
                       {value: 'title', name: 'По заголовку'  },
                       {value: 'body',  name: 'По содержимому'}
-                     ]} />
+                    ]} 
+                    />
             <MyInput 
                      placeholder = 'Поиск по заголовку ...'
                      onChange = { (el) => setFilter({...filter, query: el.target.value.toLowerCase()}) }
                      value = { filter.query }
                     />
-            <button onClick = { () => setVisible(true) }> Создать пост </button>
+            <button 
+                 className={"CrtPost-btn"}
+                 onClick = { () => setVisible(true) }> Создать пост </button>
             <Popup 
                  visible = { visible }
-                 setVisible = { setVisible }/>
+                 setVisible = { setVisible }
+                 />
         </div>
     )
 }
