@@ -15,7 +15,7 @@ function App() {
  const [  posts, setPosts  ] = useState ([])
  const [  limit, setLimit  ] = useState (10)
  const [   page, setPage   ] = useState (1)
- const [ filter, setFilter ] = useState ( {sort: ''} )
+ const [ filter, setFilter ] = useState ( {sort: '', query: ''} )
 
 
  const fetchPosts = async (limit, page) => {
@@ -27,7 +27,7 @@ function App() {
     fetchPosts (limit, page)
  }, [limit, page])
 
- const sortedPosts = useFiltering (posts, filter.sort)
+ const sortedAndFilteredPosts = useFiltering (posts, filter.sort, filter.query)
 
 
 
@@ -42,7 +42,7 @@ function App() {
                 filter={ filter }
                 setFilter = { setFilter }          />
       <PostsList 
-                posts = { sortedPosts }
+                posts = { sortedAndFilteredPosts }
                 defaultValue = 'Список Постов н-1' />
     </div >
   );
