@@ -5,8 +5,13 @@
 }
 .App {
           text-align: center;
-          min-height: 200vh;
+          min-height: 100vh;
+         padding-top: 60px;
     background-color: black;
+}
+.App-main {
+     background: black;
+     min-height: 100vh;
 }
 .CounterBlock {
              display: flex;
@@ -39,10 +44,13 @@
           box-shadow: 0 0 8px 4px rgb(0, 0, 0);           
 }
 .interaction {
+            position: absolute;
              display: flex;
-      padding-bottom: 10px;
-        padding-left: 20px;
+           transform: translateY(-50%);
+               width: 100%;
+             padding: 30px;
        border-radius: 20px;
+                 top: 50%;
           background: rgba(59, 48, 48, 0.733);
 }
 .MyInp-form {
@@ -132,4 +140,37 @@
      margin-top: 50px;
           color: red;
 }
-   
+.NavBar {
+       position: fixed;
+        display: flex;
+justify-content: space-around;
+    align-items: center;
+           left: 0;
+          right: 0;
+     min-height: 50px;
+        padding: 10px 0;
+     box-shadow: 0 0 20px 10px rgba(82, 60, 60, 0.712);
+     background: rgba(3, 0, 0, 0.87);
+     border-bottom-left-radius: 20px;
+         border-end-end-radius: 20px;
+}
+.Navbar-item {
+text-decoration: none;
+ text-transform: uppercase;
+     text-align: center;
+         height: 40px;
+        padding: 9px 15px;
+    font-weight: 600;
+ letter-spacing: 1px;
+  border-radius: 20px;
+         border: 2px solid whitesmoke; 
+     box-shadow: 0 0 8px 5px rgba(20, 135, 143, 0.425);
+          color: whitesmoke;
+     background: rgba(32, 21, 21, 0.61);
+     transition: all 0.2s ease-in-out;
+}
+.Navbar-item:hover {
+ letter-spacing: 2px;
+         border: 2px solid rgba(57, 187, 57, 0.719); 
+     box-shadow: 0 0 8px 5px rgba(57, 187, 57, 0.719);
+}

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { PostService  } from '../API/PostService';
 import { useFiltering } from '../hooks/useFiltering';
 import { useFetching  } from '../hooks/useFetching';
-import     Counter from '../components/Counter';
-import UpdateInput from '../components/UpdateInput';
 import   PostsList from '../components/PostsList';
 import  PostFilter from '../components/PostFilter';
 import      Loader from '../components/UI/loader/Loader';
@@ -33,10 +31,6 @@ const Posts = () => {
 
     return (
         <div className={"App"} >
-            <div className={"interaction"}>
-                <Counter />
-                <UpdateInput />
-            </div>
             <PostFilter 
                         filter={ filter }
                         setFilter = { setFilter }          />
