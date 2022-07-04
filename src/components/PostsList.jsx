@@ -13,7 +13,7 @@ const PostsList = ({posts, defaultValue}) => {
               )
             : <h2 style={{margin: '70px 0 40px 30px', 
                           color: 'white',
-                          }} >Посты не найдены...<br/>Перезагрузите страницу</h2>
+                          }} >Посты не найдены...</h2>
             }
         </div>
 
