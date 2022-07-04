@@ -4,6 +4,7 @@ const MySelect = ({ onChange, sort, defaultValue, options }) => {
 
     return (
       <select
+              className={"Select"}
               onChange={(el) => onChange(el.target.value)}
               value = { sort }
               >

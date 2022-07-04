@@ -20,6 +20,7 @@ const PostFilter = ({filter, setFilter}) => {
                       {value: 'body',  name: 'По содержимому'}
                      ]} />
             <MyInput 
+                     placeholder = 'Поиск по заголовку ...'
                      onChange = { (el) => setFilter({...filter, query: el.target.value.toLowerCase()}) }
                      value = { filter.query }
                     />

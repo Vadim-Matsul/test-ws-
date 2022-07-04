@@ -6,6 +6,8 @@ import UpdateInput from './components/UpdateInput';
 import   PostsList from './components/PostsList';
 import  PostFilter from './components/PostFilter';
 import './styles/App.css';
+import { useFetching } from './hooks/useFetching';
+import Loader from './components/UI/loader/Loader';
 
 
 
@@ -18,13 +20,14 @@ function App() {
  const [ filter, setFilter ] = useState ( {sort: '', query: ''} )
 
 
- const fetchPosts = async (limit, page) => {
-  const response = await PostService.getPosts(limit, page)
-    setPosts (response.data)
- }
+ const [fetching, loading, error] = useFetching ( async (limit, page) => {
+    const response = await PostService.getPosts(limit, page)
+      setPosts (response.data)
+   }
+ )
  
   useEffect ( () => {
-    fetchPosts (limit, page)
+    fetching (limit, page)
  }, [limit, page])
 
  const sortedAndFilteredPosts = useFiltering (posts, filter.sort, filter.query)
@@ -33,7 +36,6 @@ function App() {
 
   return (
     <div className={"App"} >
-      
       <div className={"interaction"}>
         <Counter />
         <UpdateInput />
@@ -41,9 +43,18 @@ function App() {
       <PostFilter 
                 filter={ filter }
                 setFilter = { setFilter }          />
-      <PostsList 
+      { error &&
+          <h2 className={'Error'} >Ошибка: {error} </h2>
+          
+      }
+      {loading
+      ? <Loader />
+      : <PostsList 
                 posts = { sortedAndFilteredPosts }
                 defaultValue = 'Список Постов н-1' />
+      }
+      
+      
     </div >
   );
 }
