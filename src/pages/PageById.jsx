@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { PostService } from "../API/PostService";
 import { useFetching } from "../hooks/useFetching";
 import Loader from "../components/UI/loader/Loader";
+import NavBar from "../components/UI/navbar/NavBar";
 
 
 
@@ -29,6 +30,7 @@ const PageById = () => {
         loadingPage
          ? <Loader />
          : <div>
+                <NavBar />
                 <div className={"Post PostById"} >
                     <h2>Пост  { postById.id }</h2>
                     <div>

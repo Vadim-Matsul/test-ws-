@@ -15,6 +15,7 @@ const [info, setInfo] = useState ('')
             updateInput.classList.remove('MyInp-form-active')
         }
     }, [info])
+    console.log(info);
     return (
         <div className={"MyInp-form"}>
             <div className={"MyInp-form-content"}>

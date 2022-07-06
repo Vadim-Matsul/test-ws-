@@ -54,7 +54,15 @@
            font-size: 14px;
           box-shadow: 0 0 8px 4px rgb(0, 0, 0);           
 }
-.interaction {
+.interaction span {
+            position: absolute;
+                left: 50%;
+           transform: translateX(-50%);
+             display: inline-block;
+               color: rgba(59, 48, 48, 0.2);
+           font-size: 600px;
+}
+.interaction-content {
             position: absolute;
              display: flex;
            transform: translateY(-50%);
@@ -62,7 +70,7 @@
              padding: 30px;
        border-radius: 20px;
                  top: 50%;
-          background: rgba(59, 48, 48, 0.733);
+          background: rgba(59, 48, 48, 0.8);
 }
 .MyInp-form {
           text-align: center;
@@ -161,15 +169,16 @@
              display: flex;
      justify-content: space-around;
          align-items: center;
+         top: 0;
                 left: 0;
                right: 0;
           min-height: 50px;
              padding: 10px 0;
           box-shadow: 0 0 20px 10px rgba(82, 60, 60, 0.712);
           background: rgba(3, 0, 0, 0.87);
+             z-index: 100;
       border-bottom-left-radius: 20px;
           border-end-end-radius: 20px;
-
 }
 .Navbar-item {
      text-decoration: none;
@@ -192,7 +201,9 @@
               border: 2px solid rgba(57, 187, 57, 0.719); 
           box-shadow: 0 0 8px 5px rgba(57, 187, 57, 0.719);
 }
-
+.NavBar-item-active {
+          box-shadow: 0 0 8px 5px rgba(57, 187, 57, 0.719);
+}
 .PostById {
             position: relative;
                  top: 100px;
@@ -271,4 +282,23 @@
         border-radius: 20px;
                border: 1px solid rgba(21, 231, 13, 0.432);
            background: #f4cd8ab9;
+}   
+.CrtPost-btn-active {
+            animation: crt-post 1s linear  infinite;
+           transition: all 2s linear;
+}
+@keyframes crt-post {
+    0% {
+           box-shadow: 0 0 10px 2px rgba(57, 187, 57, 0.719);
+          font-weight: 600;
+    }
+    50% {
+           box-shadow: 0 0 20px 4px rgba(57, 187, 57, 0.719);
+          font-weight: 700;
+            font-size: 13px;
+    }
+    100% {
+           box-shadow: 0 0 10px 2px rgba(57, 187, 57, 0.719);
+          font-weight: 600;
+    }
 }

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import MyButton from "./UI/button/MyButton";
 
-const Counter = () => {
+const Counter = ({counterNum}) => {
 
 const [count, setCount] = useState (0)
 
@@ -9,7 +9,7 @@ useEffect ( () => {
  const zeroBlock  = document.querySelector('#zeroBlock' )
  const countBlock = document.querySelector('#countBlock')
 
-    if ( count <= 0 ){
+    if ( count <= 0 || count > 999){
         setCount(0)
             zeroBlock.classList.add('ZeroBlock')
             countBlock.classList.add('ZeroBlock')
@@ -17,11 +17,11 @@ useEffect ( () => {
             zeroBlock.classList.remove('ZeroBlock')
             countBlock.classList.remove('ZeroBlock')
      }
+    counterNum (count)
 }, [count])
 
     return (
          <div className={ 'CounterBlock' }>
-            <span>{ count }</span>
             <h2 style={{ fontSize: '28px', marginTop: '-30px' }} id='countBlock'>{ count }</h2>
             <div className={ 'CounterBlock-Btns' }>
                 <MyButton onClick={ () => setCount( count + 1 )} >  Like   </MyButton>

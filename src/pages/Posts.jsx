@@ -47,6 +47,16 @@ const Posts = () => {
      postsObserver.current.observe( blockObserver.current )
     },[loading])
 
+    useEffect(() => {
+      const NavBarItems  = document.querySelectorAll('.Navbar-item')
+      const NavBarActive = document.querySelector(`.Navbar-item[href='/posts']`)
+      
+      NavBarItems.forEach( item => item.classList.remove('NavBar-item-active'))
+      if (NavBarActive){
+          NavBarActive.classList.add('NavBar-item-active')
+       }
+    },[])
+
  const removePost = (sortId) => {
     setPosts([...posts].filter( post => post.id !== sortId))
  }
@@ -54,25 +64,29 @@ const Posts = () => {
     setPosts([newPost, ...posts ])
  }    
 
+ 
 
 
     return (
         <Context.Provider
                     value={{
                         removePost,
-                        createPost
+                        createPost, 
                      }}>
             <div className={"App"} >
                 <PostFilter 
                         filter={ filter }
-                        setFilter = { setFilter }          />
+                        setFilter = { setFilter }  
+                        posts = {posts}        
+                        />
                 { error &&
                     <h2 className={'Error'} >Ошибка: {error} </h2>
                 }
                  <PostsList 
                         posts = { sortedAndFilteredPosts }
                         defaultValue = 'Список Постов н-1'  
-                        loading = {loading}/>
+                        loading = {loading}
+                        />
                 { loading &&
                   <Loader />
                 }
