@@ -1,21 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../../context";
 
 const NavBar = () => {
 const {auth, setAuth} = useContext (AppContext)
-
+const [user, setUser] = useState (
+    {name: ''})
  const logout = () => {
     localStorage.removeItem('auth') 
     setAuth (false)
  }
- 
+
+ useEffect (() => {
+    
+        setUser({...user, name: localStorage.getItem('userName')})
+        console.log('username', user.name);
+ }, [])
+
     return (
         <div className={'NavBar'}>
-            <Link to={'/posts'} className={'Navbar-item'} > Посты </Link>
-            <Link to={'/interaction'} className={'Navbar-item'}> ⟲ </Link>
-            <Link to={'/about'} className={'Navbar-item'}>   ?   </Link>
-            <button onClick={logout}>Logout</button>
+            <div className={'NavBar-Links'} >
+                <Link to={'/posts'} className={'Navbar-item'} > Посты </Link>
+                <Link to={'/interaction'} className={'Navbar-item'}> ⟲ </Link>
+                <Link to={'/about'} className={'Navbar-item'}>   ?   </Link>
+            </div>
+            <div className={'NavBar-Content'}>
+              <span>{ user.name }</span>
+              <button 
+                    className={'NavBar-Btn-logout'}
+                    onClick={logout}>Logout</button>
+            </div>
+            
         </div>
     )
 }

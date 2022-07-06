@@ -166,19 +166,51 @@
 }
 .NavBar {
             position: fixed;
-             display: flex;
-     justify-content: space-around;
-         align-items: center;
-         top: 0;
+                 top: 0;
                 left: 0;
                right: 0;
           min-height: 50px;
-             padding: 10px 0;
+             padding: 10px; 
           box-shadow: 0 0 20px 10px rgba(82, 60, 60, 0.712);
           background: rgba(3, 0, 0, 0.87);
              z-index: 100;
-      border-bottom-left-radius: 20px;
-          border-end-end-radius: 20px;
+ border-bottom-left-radius: 20px;
+     border-end-end-radius: 20px;
+     /* border: 1px solid white; */
+}
+.NavBar-Links {
+             display: flex;
+     justify-content: space-around;
+         align-items: center;
+               float: left;
+               width: 700px;
+             padding: 5px;
+          min-height: 40px;
+              /* border: 1px solid white; */
+}
+.NavBar-Content {
+               float: right;
+          text-align: center;
+           min-width: 200px;
+          min-height: 50px;
+        margin-right: 20px;
+               color: white;
+              /* border: 1px solid white;           */
+}
+.NavBar-Content span {
+             display: inline-block;
+              margin: 12px 7px;
+             padding: 5px 8px;
+      letter-spacing: 1px;
+      border-radius: 20px;
+      text-transform: uppercase;
+               color: #f4cd8ae5;
+          background: rgba(192, 170, 170, 0.19);
+}
+.NavBar-Content span:hover {
+         font-weight: 530;
+               color: #f4cd8a;
+          background: rgba(192, 170, 170, 0.234);
 }
 .Navbar-item {
      text-decoration: none;
@@ -203,6 +235,34 @@
 }
 .NavBar-item-active {
           box-shadow: 0 0 8px 5px rgba(57, 187, 57, 0.719);
+}
+.NavBar-Btn-logout {
+           font-size: 0;
+             padding: 0;
+              margin: 0;
+          background: none;
+}
+.NavBar-Btn-logout::before,
+.NavBar-Btn-logout::after {
+             content: '';
+             display: block;
+            position: relative;
+              cursor: pointer;
+                 top: 3px;
+               width: 3px;
+              height: 16px;
+           transform: rotate(45deg);
+             opacity: 0.5;
+          background: rgb(255, 0, 0);
+                 
+}
+.NavBar-Btn-logout::after{
+                 top: -13px;
+           transform: rotate(-45deg);
+}
+.NavBar-Btn-logout:hover::before,
+.NavBar-Btn-logout:hover::after  {
+             opacity: 1;
 }
 .PostById {
             position: relative;
@@ -316,7 +376,7 @@
                 width: 300px;
                height: 180px;
         border-radius: 30px;
-           box-shadow: 0 0 50px 5px whitesmoke;
+           box-shadow: 0 0 50px 20px rgb(0, 0, 0);
            background: grey;
               z-index: 1;
 }
@@ -337,4 +397,29 @@
 }
 .Log::after {
                margin: -350px 0 0 40px;
+}
+.AuthPage-Error {
+             position: absolute;
+            min-width: 100px;
+          font-weight: 600;
+               height: 50px;
+            font-size: 50px;
+                 left: 5%;
+                  top: 20%;
+                color: rgba(211, 9, 9, 0.644);
+           background: none;   
+}
+.AuthPage-Error-Anim {
+           animation: erroranim 0.7s ;
+}
+@keyframes erroranim {
+    0%, 20%, 40%, 60%, 80% {
+           transform: translateX(-50px) scale(0.95);
+    }
+    10%, 30%, 50%, 70%, 90% {
+           transform: translateX(50px) scale(1.05);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
 }
