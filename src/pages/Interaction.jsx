@@ -25,6 +25,7 @@ const Interaction = () => {
 
     return (
         <div className="interaction">
+            <NavBar />
             <span >{ num }</span>
             <div className={"interaction-content"} >
                 <Counter 

@@ -302,3 +302,39 @@
           font-weight: 600;
     }
 }
+.Log-Page {
+              display: flex;
+      justify-content: space-around;
+          align-items: center;
+       flex-direction: column;
+             position: absolute;
+                  top: 50%;
+                 left: 50%;
+            transform: translateX(-50%)
+                       translateY(-50%);
+              padding: 20px;
+                width: 300px;
+               height: 180px;
+        border-radius: 30px;
+           box-shadow: 0 0 50px 5px whitesmoke;
+           background: grey;
+              z-index: 1;
+}
+.Log::before, .Log::after  {
+              content: '';
+              display: block;
+             position: absolute;
+                  top: 50%;
+                 left: 50%;
+               margin: -350px 0 0 -100px;
+                width: 30px;
+               height: 700px;
+               border-radius: 50%;
+            transform: rotate(30deg);
+           box-shadow: 0 0 50px 3px rgba(245, 245, 245, 0.13);
+           background: rgba(255, 255, 255, 0.153);
+              z-index: 0;
+}
+.Log::after {
+               margin: -350px 0 0 40px;
+}

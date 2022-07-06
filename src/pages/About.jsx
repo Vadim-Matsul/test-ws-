@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import NavBar from "../components/UI/navbar/NavBar";
+
 
 const About = () => {
 
@@ -14,9 +16,9 @@ useEffect(() => {
 },[])
 
     return (
-        <h1>
-            About 
-        </h1>
+        <div>
+            <NavBar />
+        </div>
     )
 }
 

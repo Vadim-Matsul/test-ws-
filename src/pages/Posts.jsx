@@ -7,6 +7,7 @@ import { getTotalPage } from '../utils/TotalPage';
 import   PostsList from '../components/PostsList';
 import  PostFilter from '../components/PostFilter';
 import      Loader from '../components/UI/loader/Loader';
+import NavBar from '../components/UI/navbar/NavBar';
 
 
 const Posts = () => {
@@ -74,6 +75,7 @@ const Posts = () => {
                         createPost, 
                      }}>
             <div className={"App"} >
+                <NavBar />
                 <PostFilter 
                         filter={ filter }
                         setFilter = { setFilter }  
