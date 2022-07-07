@@ -25,7 +25,7 @@ const [user, setUser] = useState (
                 <Link to={'/about'} className={'Navbar-item'}>   ?   </Link>
             </div>
             <div className={'NavBar-Content'}>
-              <span>{ user.name }</span>
+              <h3>{ user.name }</h3>
               <button 
                     className={'NavBar-Btn-logout'}
                     onClick={logout}>Logout</button>

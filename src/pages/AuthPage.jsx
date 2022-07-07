@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import MyButton from "../components/UI/button/MyButton";
 import MyInput from "../components/UI/input/MyInput";
 import Popup from "../components/UI/popup/Popup";
@@ -7,12 +7,16 @@ import { AuthError } from "../utils/AuthError";
 
 const AuthPage = () => {
  
+
  const {auth, setAuth} = useContext ( AppContext )
  const [userInfo, setUserInfo] = useState(
     {name: '', password: '', error: ''}
  )
  const UserName = userInfo.name.length
  const UserPass = userInfo.password.length
+
+
+
 
  const config = {
           error_p_l: 'Введите логин и пароль',
@@ -77,6 +81,7 @@ const AuthPage = () => {
            && UserName <= 12 
            && !UserPass ){
         AuthError (config.userData, config.error_p)
+        localStorage.setItem('userName', userInfo.name)
       }
       if ( ( UserName <= 3 || UserName > 12 ) 
              && !UserPass  ){
@@ -107,11 +112,39 @@ const AuthPage = () => {
         AuthError (config.userData, config.error_p_l)
     } 
 }
+ 
 
+
+
+ useEffect (() => {
+ const loginInput = document.querySelector('#logInp')
+ const passwordInput = document.querySelector('#pasInp')
+ const authForm = document.querySelector('.Log-Page')
+
+    if ( localStorage.getItem('userName') ){
+      setUserInfo({...userInfo, name: localStorage.getItem('userName') })
+      passwordInput.focus()
+    } else {
+        console.log('b');
+      loginInput.focus()
+    }
+ 
+  authForm.addEventListener("submit",  () => {
+    setTimeout(() => {
+        if ( localStorage.getItem('userName') ){
+            passwordInput.focus()
+        } else {
+          loginInput.focus()
+        }
+    }, 0.0001)
+  })
+ },[])
+    
+    
 
 
     return (
-        <div>
+        <div className={"AuthPage"}>
           <div className={'Log'}>
             <div className={'AuthPage-Error'}>
                 <span>{userInfo.error}</span>
@@ -124,12 +157,14 @@ const AuthPage = () => {
                     value={userInfo.name}
                     onChange={el => setUserInfo({...userInfo, name: el.target.value})}
                     placeholder='Логин'
+                    id='logInp'
                      />
                 <MyInput  
                     value={userInfo.password}
                     onChange={el => setUserInfo({...userInfo, password: el.target.value})}
                     placeholder='Пароль'
                     type='password'
+                    id='pasInp'
                     />
                 <MyButton > Войти </MyButton>
                 </form>

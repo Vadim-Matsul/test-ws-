@@ -10,8 +10,8 @@
     background-color: black;
 }
 .App-main {
-     background: black;
-     min-height: 100vh;
+          background: black;
+          min-height: 100vh;
 }
 .CounterBlock {
              display: flex;
@@ -197,17 +197,19 @@
                color: white;
               /* border: 1px solid white;           */
 }
-.NavBar-Content span {
-             display: inline-block;
-              margin: 12px 7px;
-             padding: 5px 8px;
+.NavBar-Content h3 {
+             display: block;
+               float: right;
+              margin: 7px 30px 10px 10px;
+             padding: 5px 10px;
       letter-spacing: 1px;
-      border-radius: 20px;
+       border-radius: 20px;
+           font-size: 20px;
       text-transform: uppercase;
                color: #f4cd8ae5;
           background: rgba(192, 170, 170, 0.19);
 }
-.NavBar-Content span:hover {
+.NavBar-Content h3:hover {
          font-weight: 530;
                color: #f4cd8a;
           background: rgba(192, 170, 170, 0.234);
@@ -237,6 +239,9 @@
           box-shadow: 0 0 8px 5px rgba(57, 187, 57, 0.719);
 }
 .NavBar-Btn-logout {
+            position: absolute;
+                 top: 20px;
+               right: 40px;
            font-size: 0;
              padding: 0;
               margin: 0;

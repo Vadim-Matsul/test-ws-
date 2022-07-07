@@ -28,11 +28,9 @@ const PostItem = ({post}) => {
             </div>
             <div className={'Post-btns'}>
             {post.id > 101
-            ? <MyButton disabled > </MyButton>
+            ? <span style={{background: 'none'}}></span>
             : <MyButton onClick = { () => RoutePage (post.id) } > Open   </MyButton>
             }
-            
-            
             <MyButton onClick = { () => removePost(post.id) } > Delete </MyButton>
             </div>
         </div>
