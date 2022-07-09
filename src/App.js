@@ -17,7 +17,7 @@ function App() {
               auth, 
               setAuth
             }}>
-    <div className={'App-main'}>
+    <div className={'App-main Container'}>
       <BrowserRouter >
         <AppRouter />
       </BrowserRouter>

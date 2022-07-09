@@ -13,6 +13,11 @@
           background: black;
           min-height: 100vh;
 }
+.Container {
+              margin: auto;
+           max-width: 1000px;
+}
+             
 .CounterBlock {
              display: flex;
          align-items: center;
@@ -180,16 +185,27 @@
 }
 .NavBar-Links {
              display: flex;
-     justify-content: space-around;
+     justify-content: space-between;
          align-items: center;
                float: left;
-               width: 700px;
+               width: 600px;
              padding: 5px;
+         margin-left: 15px;
           min-height: 40px;
               /* border: 1px solid white; */
 }
+.NavBar-AuthLinks {
+             display: flex;
+     justify-content: space-around;
+         align-items: center;
+              margin: 0 auto;
+               width: 600px;
+             padding: 5px;
+          min-height: 40px;
+}
 .NavBar-Content {
                float: right;
+            position: relative;
           text-align: center;
            min-width: 200px;
           min-height: 50px;
@@ -240,20 +256,22 @@
 }
 .NavBar-Btn-logout {
             position: absolute;
-                 top: 20px;
+                 top: 15px;
                right: 40px;
            font-size: 0;
              padding: 0;
               margin: 0;
+              border: none;
           background: none;
 }
 .NavBar-Btn-logout::before,
 .NavBar-Btn-logout::after {
              content: '';
              display: block;
-            position: relative;
+            position: absolute;
               cursor: pointer;
-                 top: 3px;
+                 top: 0;
+                left: 25px;
                width: 3px;
               height: 16px;
            transform: rotate(45deg);
@@ -262,7 +280,6 @@
                  
 }
 .NavBar-Btn-logout::after{
-                 top: -13px;
            transform: rotate(-45deg);
 }
 .NavBar-Btn-logout:hover::before,
@@ -373,17 +390,26 @@
           align-items: center;
        flex-direction: column;
              position: absolute;
-                  top: 50%;
+                  top: 60%;
                  left: 50%;
             transform: translateX(-50%)
                        translateY(-50%);
               padding: 20px;
                 width: 300px;
                height: 180px;
-        border-radius: 30px;
-           box-shadow: 0 0 50px 20px rgb(0, 0, 0);
-           background: grey;
               z-index: 1;
+}
+.Log {
+             position: relative;
+                width: 300px;
+               height: 250px;
+                  top: 250px;
+                 left: 50%;
+            transform: translateX(-50%);
+              padding: 20px;
+        border-radius: 30px;
+           background: grey;
+                  
 }
 .Log::before, .Log::after  {
               content: '';
@@ -397,38 +423,38 @@
                border-radius: 50%;
             transform: rotate(30deg);
            box-shadow: 0 0 50px 3px rgba(245, 245, 245, 0.13);
-           background: rgba(255, 255, 255, 0.153);
-              z-index: 0;
+           background: rgba(255, 255, 255, 0.274);
+              z-index: -1;
 }
 .Log::after {
-               margin: -350px 0 0 40px;
+               margin: -350px 0 0 20px;
 }
 .AuthPage-Error {
-             position: absolute;
+       text-transform: uppercase;
+           text-align: center;
             min-width: 100px;
-          font-weight: 600;
-               height: 50px;
-            font-size: 50px;
-                 left: 5%;
-                  top: 20%;
-                color: rgba(211, 9, 9, 0.644);
-           background: none;  
-          
+              padding: 10px 5px;
+            font-size: 16px;
+                color: rgba(211, 9, 9, 0.932);     
 }
 .AuthPage-Error span {
-          transition: all 0.5s ease-in-out; 
+          font-weight: 900;
+           transition: all 0.5s ease-in-out; 
 }
 .AuthPage-Error-Anim {
-           animation: erroranim 0.7s ;
+               border: 1px solid rgb(182, 150, 150);
+        border-radius: 20px;
+     background-color: rgba(0, 0, 0, 0.726);
+            animation: erroranim 0.7s ;
 }
 @keyframes erroranim {
     0%, 20%, 40%, 60%, 80% {
-           transform: translateX(-50px) scale(0.95);
+            transform: translateX(-50px) scale(0.95);
     }
     10%, 30%, 50%, 70%, 90% {
-           transform: translateX(50px) scale(1.05);
+            transform: translateX(50px) scale(1.05);
     }
     100% {
-        transform: translateX(0px) scale(1);
+            transform: translateX(0px) scale(1);
     }
 }

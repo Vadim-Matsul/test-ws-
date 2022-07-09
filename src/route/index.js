@@ -4,6 +4,7 @@ import       About from "../pages/About";
 import Interaction from "../pages/Interaction";
 import    PageById from "../pages/PageById";
 import    AuthPage from "../pages/AuthPage";
+import   AboutAuth from "../pages/AboutAuth";
 
 export const privateRoutes = [
     {path:       "/posts",  element: Posts      },
@@ -15,5 +16,6 @@ export const privateRoutes = [
 
 export const publicRoutes = [
     {path: '/login', element: AuthPage },
+    {path: '/about', element: AboutAuth},
     {path: '*',      element: AuthPage }
 ]

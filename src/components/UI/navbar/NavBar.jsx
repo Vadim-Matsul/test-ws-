@@ -18,20 +18,22 @@ const [user, setUser] = useState (
  }, [])
 
     return (
-        <div className={'NavBar'}>
-            <div className={'NavBar-Links'} >
-                <Link to={'/posts'} className={'Navbar-item'} > Посты </Link>
-                <Link to={'/interaction'} className={'Navbar-item'}> ⟲ </Link>
-                <Link to={'/about'} className={'Navbar-item'}>   ?   </Link>
+          <div className={'NavBar '}>
+            <div className={'Container'}>
+                <div className={'NavBar-Links'} >
+                    <Link to={'/posts'} className={'Navbar-item'} > Посты </Link>
+                    <Link to={'/interaction'} className={'Navbar-item'}> ⟲ </Link>
+                    <Link to={'/about'} className={'Navbar-item'}>   ?   </Link>
+                </div>
+                <div className={'NavBar-Content'}>
+                <h3>{ user.name }</h3>
+                <button 
+                        className={'NavBar-Btn-logout'}
+                        onClick={logout}> Logout </button>
+                </div>
             </div>
-            <div className={'NavBar-Content'}>
-              <h3>{ user.name }</h3>
-              <button 
-                    className={'NavBar-Btn-logout'}
-                    onClick={logout}>Logout</button>
-            </div>
-            
-        </div>
+          </div>
+        
     )
 }
 

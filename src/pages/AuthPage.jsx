@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import MyButton from "../components/UI/button/MyButton";
 import MyInput from "../components/UI/input/MyInput";
+import NavBarAuth from "../components/UI/navbar/NavBarAuth";
 import Popup from "../components/UI/popup/Popup";
 import { AppContext } from "../context";
 import { AuthError } from "../utils/AuthError";
@@ -14,8 +15,6 @@ const AuthPage = () => {
  )
  const UserName = userInfo.name.length
  const UserPass = userInfo.password.length
-
-
 
 
  const config = {
@@ -139,17 +138,15 @@ const AuthPage = () => {
     }, 0.0001)
   })
  },[])
-    
-    
 
 
     return (
         <div className={"AuthPage"}>
+          <NavBarAuth />
           <div className={'Log'}>
-            <div className={'AuthPage-Error'}>
-                <span>{userInfo.error}</span>
-            </div>
-            <div>
+                <div className={'AuthPage-Error'}>
+                    <span>{userInfo.error}</span>
+                </div>
                 <form 
                     className={"Log-Page"}
                     onSubmit ={logSystem }>
@@ -169,7 +166,6 @@ const AuthPage = () => {
                 <MyButton > Войти </MyButton>
                 </form>
             </div>
-          </div>
         </div>
     )
 }

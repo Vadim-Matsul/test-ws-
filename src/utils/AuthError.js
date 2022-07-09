@@ -16,3 +16,4 @@ export const AuthError = ({...config}, message) => {
       config.setUserInfo ({...config.userInfo, error: message})
   config.setAuth( false )
 }
+
