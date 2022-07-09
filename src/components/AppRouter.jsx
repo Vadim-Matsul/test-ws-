@@ -1,24 +1,31 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppContext } from "../context";
+import { useFetching } from "../hooks/useFetching";
 import { privateRoutes, publicRoutes } from "../route";
+import Loader from "./UI/loader/Loader";
 
 
 
 const AppRouter = () => {
 
-const {auth, setAuth} = useContext ( AppContext );
+ const {auth, setAuth} = useContext ( AppContext );
 
+ const [fetchAuth, loadingAuth, ErrorAuth]  = useFetching (() => {
+    if ( localStorage.getItem('auth') ){
+        setAuth(true)
+    }
+ })
     useEffect (() => {
-        if (localStorage.getItem('auth')){
-            setAuth(true)
-     }
+       fetchAuth ()
     }, [auth])
     
 
 
     return (
-            auth 
+        loadingAuth 
+          ? <Loader /> 
+          : auth 
             ? <Routes>{ privateRoutes.map( route => 
                 <Route 
                     path={ route.path } 
@@ -33,6 +40,7 @@ const {auth, setAuth} = useContext ( AppContext );
                     key = { route.path } 
                 /> )}
               </Routes>
+           
             
     )
 }

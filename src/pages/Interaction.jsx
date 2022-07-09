@@ -27,7 +27,7 @@ const Interaction = () => {
         <div className="interaction">
             <NavBar />
             <span >{ num }</span>
-            <div className={"interaction-content"} >
+            <div className={"interaction-content Container"} >
                 <Counter 
                         counterNum = { counterNum }
                         onChange = { counterNum } 

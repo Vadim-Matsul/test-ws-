@@ -34,7 +34,7 @@ const Posts = () => {
     }, [limit, page])
  
  const totalPages = getTotalPage ( totalCount, limit )
- console.log(totalPages);
+
     useEffect (() => {
         if (loading) return
         if (postsObserver.current) postsObserver.current.disconnect ()
@@ -44,7 +44,11 @@ const Posts = () => {
             setPage ( page + 1 );
           }
         }
-     postsObserver.current = new IntersectionObserver ( callback )
+     postsObserver.current = new IntersectionObserver ( callback, {
+      rootMargin: '1000px'
+     }
+   
+     )
      postsObserver.current.observe( blockObserver.current )
     },[loading])
 

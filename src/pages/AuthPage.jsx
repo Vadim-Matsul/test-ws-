@@ -57,14 +57,14 @@ const AuthPage = () => {
              && UserName <= 12 
              && UserPass !== 0 ){
                 if (UserPass <= 8){ AuthError (config.userData, config.error_p_short) }
-                if (UserPass > 30){ AuthError (config.userData, config.error_p_long ) } 
+                else { AuthError (config.userData, config.error_p_long ) } 
       }
       if ( ( UserName <= 3 || UserName > 12 ) 
              && UserPass > 8 
              && UserPass <= 30 
              && UserName !==0 ){
                 if (UserName <= 3){ AuthError (config.userData, config.error_l_short) }
-                if (UserName > 12){ AuthError (config.userData, config.error_l_long ) }
+                else { AuthError (config.userData, config.error_l_long ) }
       }
       if ( UserName > 12 
            && UserPass > 30 ) {
@@ -85,7 +85,7 @@ const AuthPage = () => {
       if ( ( UserName <= 3 || UserName > 12 ) 
              && !UserPass  ){
                 if (UserName <= 3){ AuthError (config.userData, config.error_l_short) }
-                if (UserName > 12){ AuthError (config.userData, config.error_l_long ) }
+                else { AuthError (config.userData, config.error_l_long ) }
       }
       if ( UserPass > 8 
            && UserPass <= 30 
@@ -95,7 +95,7 @@ const AuthPage = () => {
       if ( ( UserPass <= 8 || UserPass > 30 ) 
              && !UserName ){
                 if (UserPass <= 8){ AuthError (config.userData, config.error_p_short) }
-                if (UserPass > 30){ AuthError (config.userData, config.error_p_long ) }
+                else { AuthError (config.userData, config.error_p_long ) }
       }
       if ( UserPass > 30 
            && UserName <= 3 
@@ -124,7 +124,6 @@ const AuthPage = () => {
       setUserInfo({...userInfo, name: localStorage.getItem('userName') })
       passwordInput.focus()
     } else {
-        console.log('b');
       loginInput.focus()
     }
  

@@ -17,5 +17,9 @@
 .MyInp:focus {
                resize: none;
                border: 1px solid whitesmoke;
-
+     background-color: #f4cd8ae7;
+}
+.MyInp:hover {
+               resize: none;
+     background-color: #f4cd8ae7;
 }
