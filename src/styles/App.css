@@ -135,6 +135,22 @@
              display: flex;
      justify-content: space-between;
 }
+
+.post-enter {
+  transform: translateX( 1000px );
+ }
+ .post-enter-active {
+  transform: translateX( 0 );
+  transition: all 500ms ease-in-out;
+ }
+ .post-exit {
+  transform: translateX( 0 );
+ }
+ .post-exit-active {
+  transform: translateX( -1000px );
+  transition: all 500ms ease-in-out;
+ }
+
 .Filter-form {
              display: flex;
      justify-content: space-around;
@@ -158,6 +174,8 @@
       text-transform: uppercase;
           text-align: center;
       letter-spacing: 1px;
+           max-width: 200px;
+           min-width: 50px;
              padding: 15px;
        border-radius: 20px;
          font-weight: 700;

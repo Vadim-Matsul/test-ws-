@@ -6,7 +6,7 @@ import { Context } from "../context";
 
 
 
-const PostItem = ({post}) => {
+const PostItem = ({post, number}) => {
 
  const navigate = useNavigate ()
  const {removePost} = useContext ( Context )
@@ -17,7 +17,7 @@ const PostItem = ({post}) => {
  }
     return (
         <div className={"Post"} >
-            <h2>Номер поста: { post.id }</h2>
+            <h2>Номер поста: { number }</h2>
             <div>
                 <h3>Заголовок:</h3>
                 <span className={"Post-content-title"}>{post.title}</span>

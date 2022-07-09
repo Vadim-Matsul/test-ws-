@@ -9,11 +9,10 @@ import  PostFilter from '../components/PostFilter';
 import      Loader from '../components/UI/loader/Loader';
 import NavBar from '../components/UI/navbar/NavBar';
 
-
 const Posts = () => {
 
  const [  posts, setPosts  ] = useState ([])
- const [  limit, setLimit  ] = useState (10)
+ const [  limit, setLimit  ] = useState (5)
  const [   page, setPage   ] = useState (1)
  const [ totalCount, setTotalCount ] = useState ()
  const [ filter, setFilter ] = useState ( {sort: '', query: ''} )
@@ -45,7 +44,7 @@ const Posts = () => {
           }
         }
      postsObserver.current = new IntersectionObserver ( callback, {
-      rootMargin: '1000px'
+      rootMargin: '1500px'
      }
    
      )
@@ -77,6 +76,8 @@ const Posts = () => {
                     value={{
                         removePost,
                         createPost, 
+                        limit,
+                        setLimit
                      }}>
             <div className={"App"} >
                 <NavBar />
@@ -85,6 +86,7 @@ const Posts = () => {
                         setFilter = { setFilter }  
                         posts = {posts}        
                         />
+                
                 { error &&
                     <h2 className={'Error'} >Ошибка: {error} </h2>
                 }

@@ -9,7 +9,7 @@ const AboutAuth = () => {
         <div>
             <NavBarAuth />
             <div className={'AboutAuth-Content'}>
-                <span>Это первый пробный сайт, использующий концепцию SinglePageApplication</span>
+                <span>Мой первый пробный сайт, использующий концепцию SinglePageApplication</span>
                 <span> Text text text text text text text text
                 text text text text text text text text
                 text text text text text text text text
