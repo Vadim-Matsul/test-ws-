@@ -7,28 +7,22 @@ import    MySelect from "./UI/select/MySelect";
 
 
 const PostFilter = ({filter, setFilter, posts}) => {
-
- const [visible, setVisible] = useState (false)
- const [postsCount, setPostsCount] = useState (10)
- const { limit, setLimit } = useContext ( Context )
-console.log(limit);
+ const [visible, setVisible] = useState(false);
+ const [postsCount, setPostsCount] = useState(10);
+ const { limit, setLimit } = useContext( Context );
 
  useEffect (() => {
-  const createPostBtn = document.querySelector('.CrtPost-btn')
-   if (createPostBtn){
-    if (posts.length == 0){
-      createPostBtn.classList.add('CrtPost-btn-active')
-    } else {
-      createPostBtn.classList.remove('CrtPost-btn-active')
-    }
-   }
+  const createPostBtn = document.querySelector('.CrtPost-btn');
+   if (!createPostBtn) return;
   
+    if (!posts.length){
+      createPostBtn.classList.add('CrtPost-btn-active');
+      return;
+    } 
+  
+    createPostBtn.classList.remove('CrtPost-btn-active')
  }, [posts])
  
-
-
-  
-
     return (
         <div className={'Filter-form'}>
             <MySelect 
@@ -39,7 +33,7 @@ console.log(limit);
                       {value: 'title', name: 'По заголовку'  },
                       {value: 'body',  name: 'По содержимому'}
                     ]} 
-                    />
+             />
             
             <MyInput 
                      placeholder = 'Поиск по заголовку ...'
@@ -68,6 +62,5 @@ console.log(limit);
         </div>
     )
 }
-
 
 export default PostFilter;
